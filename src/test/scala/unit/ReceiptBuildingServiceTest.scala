@@ -9,12 +9,12 @@ import org.scalatest._
 
 class ReceiptBuildingServiceTest extends FlatSpec with Matchers with Assertions {
 
-  private val _carAmRule = ReceiptPolicyRule("AM rate", 2, WeekDays.WorkWeek, LocalTimeInterval(new LocalTime(7, 0), new LocalTime(12, 0)))
-  private val _carPmRule = ReceiptPolicyRule("PM rate", 2.5, WeekDays.WorkWeek, LocalTimeInterval(new LocalTime(12, 0), new LocalTime(19, 0)))
+  private val _carAmRule = ReceiptPolicyRule("AM rate", 2, WeekDays.WorkWeek, new LocalTimeInterval(new LocalTime(7, 0), new LocalTime(12, 0)))
+  private val _carPmRule = ReceiptPolicyRule("PM rate", 2.5, WeekDays.WorkWeek, new LocalTimeInterval(new LocalTime(12, 0), new LocalTime(19, 0)))
   private val _carPolicy = ReceiptPolicy(VehicleType.Car, List(_carAmRule, _carPmRule))
 
-  private val _motorbikeAmRule = ReceiptPolicyRule("AM rate", 1, WeekDays.WorkWeek, LocalTimeInterval(new LocalTime(7, 0), new LocalTime(12, 0)))
-  private val _motorbikePmRule = ReceiptPolicyRule("PM rate", 1, WeekDays.WorkWeek, LocalTimeInterval(new LocalTime(12, 0), new LocalTime(19, 0)))
+  private val _motorbikeAmRule = ReceiptPolicyRule("AM rate", 1, WeekDays.WorkWeek, new LocalTimeInterval(new LocalTime(7, 0), new LocalTime(12, 0)))
+  private val _motorbikePmRule = ReceiptPolicyRule("PM rate", 1, WeekDays.WorkWeek, new LocalTimeInterval(new LocalTime(12, 0), new LocalTime(19, 0)))
   private val _motorbikePolicy = ReceiptPolicy(VehicleType.Car, List(_motorbikeAmRule, _motorbikePmRule))
 
   private val _service = new ReceiptBuildingService()

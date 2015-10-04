@@ -4,17 +4,10 @@ import org.joda.time._
 
 object IntervalImplicits {
 
-  implicit class RichInterval(i: Interval) {
-    def splitByDays() = getDailyIntervals(i.getStartMillis(), i.getEndMillis())
+  implicit class RichInterval(interval: Interval) {
 
-    private def getDailyIntervals(startDayMillis: Long, endMillis: Long): List[Interval] = {
-      if (startDayMillis == endMillis)
-        Nil
-      else {
-        val endDayMillis = Math.min(new DateTime(startDayMillis).plusDays(1).withTimeAtStartOfDay().getMillis(), endMillis)
-        new Interval(startDayMillis, endDayMillis) :: getDailyIntervals(endDayMillis, endMillis)
-      }
-    }
+    def plusDays(i: Int) = interval.withEnd(interval.getEnd().plusDays(i)).withStart(interval.getStart().plusDays(i))
+
   }
 
 }

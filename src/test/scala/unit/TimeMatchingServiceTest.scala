@@ -9,9 +9,9 @@ import org.scalatest._
 
 class TimeMatchingServiceTest extends FlatSpec with Matchers with Assertions {
 
-  private val _amRule = ReceiptPolicyRule("AM rate", 2, WeekDays.WorkWeek, LocalTimeInterval(new LocalTime(7, 0), new LocalTime(12, 0)))
-  private val _pmRule = ReceiptPolicyRule("PM rate", 2.5, WeekDays.WorkWeek, LocalTimeInterval(new LocalTime(12, 0), new LocalTime(19, 0)))
-  private val _crossDayRule = ReceiptPolicyRule("Night rate", 0.5, WeekDays.WorkWeek, LocalTimeInterval(new LocalTime(23, 0), new LocalTime(1, 15)))
+  private val _amRule = ReceiptPolicyRule("AM rate", 2, WeekDays.WorkWeek, new LocalTimeInterval(new LocalTime(7, 0), new LocalTime(12, 0)))
+  private val _pmRule = ReceiptPolicyRule("PM rate", 2.5, WeekDays.WorkWeek, new LocalTimeInterval(new LocalTime(12, 0), new LocalTime(19, 0)))
+  private val _crossDayRule = ReceiptPolicyRule("Night rate", 0.5, WeekDays.WorkWeek, new LocalTimeInterval(new LocalTime(23, 0), new LocalTime(1, 15)))
   private val _carPolicy = ReceiptPolicy(VehicleType.Car, List(_amRule, _pmRule))
 
   private val _service = new TimeMatchingService()
