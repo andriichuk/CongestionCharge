@@ -1,4 +1,4 @@
-package congestioncharge.entities
+package congestioncharge.domain.charging
 
 import org.joda.time._
 

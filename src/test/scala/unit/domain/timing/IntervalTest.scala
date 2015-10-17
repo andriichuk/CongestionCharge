@@ -1,6 +1,7 @@
-package unit
+package unit.domain.timing
 
-import congestioncharge.utils.IntervalImplicits._
+import congestioncharge.domain.timing.IntervalImplicits
+import congestioncharge.domain.timing.IntervalImplicits._
 import org.joda.time._
 import org.scalatest._
 

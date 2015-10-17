@@ -10,7 +10,8 @@ libraryDependencies ++= Seq(
   "org.scalatest" %% "scalatest" % "2.2.4" % "test",
   "junit" % "junit" % "4.12" % "test",
   "com.novocode" % "junit-interface" % "0.11" % "test",
-  "com.github.nscala-time" %% "nscala-time" % "2.2.0"
+  "com.github.nscala-time" %% "nscala-time" % "2.2.0",
+  "org.mockito" % "mockito-core" % "1.9.5"
 )
 
 testOptions += Tests.Argument(TestFrameworks.JUnit, "-v")
