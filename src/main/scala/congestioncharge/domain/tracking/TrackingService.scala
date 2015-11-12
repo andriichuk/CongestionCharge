@@ -2,6 +2,7 @@ package congestioncharge.domain.tracking
 
 import congestioncharge.domain.charging.{Receipt, ChargeService}
 import com.github.nscala_time.time.Imports._
+import congestioncharge.domain.core.Vehicle
 
 class TrackingService(trackingRepository: TrackingRepository) {
 

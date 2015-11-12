@@ -1,6 +1,7 @@
 package congestioncharge.application
 
 import congestioncharge.domain.charging._
+import congestioncharge.domain.core.Vehicle
 import congestioncharge.domain.tracking._
 
 class CongestionChargeZone(trackingService: TrackingService, chargeService: ChargeService) {

@@ -1,4 +1,4 @@
-package congestioncharge.domain.tracking
+package congestioncharge.domain.core
 
 object VehicleType extends Enumeration {
   type VehicleType = Value

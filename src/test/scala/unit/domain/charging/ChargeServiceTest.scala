@@ -1,6 +1,7 @@
 package unit.domain.charging
 
 import congestioncharge.domain.charging._
+import congestioncharge.domain.core.{VehicleType, Vehicle}
 import congestioncharge.domain.timing._
 import congestioncharge.domain.tracking._
 import congestioncharge.infrastructure.PolicyHardcodedMemoryRepository

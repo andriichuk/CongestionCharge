@@ -2,6 +2,7 @@ package unit.application
 
 import congestioncharge.application._
 import congestioncharge.domain.charging._
+import congestioncharge.domain.core.{VehicleType, Vehicle}
 import congestioncharge.domain.tracking._
 import org.joda.time.DateTime
 import org.mockito.Matchers.{eq => eqTo}

@@ -1,8 +1,9 @@
 package congestioncharge.infrastructure
 
 import congestioncharge.domain.charging._
-import congestioncharge.domain.tracking.VehicleType
+import congestioncharge.domain.core.VehicleType
 import VehicleType._
+import congestioncharge.domain.core.VehicleType
 import congestioncharge.domain.timing.{LocalTimeInterval, WeekDays}
 import org.joda.time.LocalTime
 

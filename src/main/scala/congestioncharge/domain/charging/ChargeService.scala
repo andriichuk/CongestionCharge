@@ -1,7 +1,7 @@
 package congestioncharge.domain.charging
 
+import congestioncharge.domain.core.Vehicle
 import congestioncharge.domain.timing.TimingService
-import congestioncharge.domain.tracking.Vehicle
 import org.joda.time._
 
 class ChargeService(timingService: TimingService, policyRepository: PolicyRepository) {

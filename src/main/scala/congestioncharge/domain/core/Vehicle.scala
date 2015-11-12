@@ -1,4 +1,4 @@
-package congestioncharge.domain.tracking
+package congestioncharge.domain.core
 
 import VehicleType._
 
