@@ -2,7 +2,7 @@ package congestioncharge.domain.tracking
 
 import org.joda.time.DateTime
 
-trait CongestionChargeZoneRepository {
+trait TrackingRepository {
 
   def writeVehicleEntry(vehicleId: String, time: DateTime)
 

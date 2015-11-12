@@ -1,9 +1,9 @@
 package congestioncharge.infrastructure
 
-import congestioncharge.domain.tracking.CongestionChargeZoneRepository
+import congestioncharge.domain.tracking.TrackingRepository
 import org.joda.time.DateTime
 
-class CongestionChargeZoneMemoryRepository extends CongestionChargeZoneRepository {
+class TrackingMemoryRepository extends TrackingRepository {
 
   private val _memoryDb = scala.collection.mutable.Map[String, DateTime]()
 
