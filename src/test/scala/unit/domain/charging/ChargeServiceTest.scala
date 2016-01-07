@@ -1,7 +1,7 @@
 package unit.domain.charging
 
 import congestioncharge.domain.charging._
-import congestioncharge.domain.core.{VehicleType, Vehicle}
+import congestioncharge.domain.shared.{WeekDays, LocalTimeInterval, VehicleType}
 import congestioncharge.domain.timing._
 import congestioncharge.domain.tracking._
 import congestioncharge.infrastructure.PolicyHardcodedMemoryRepository
@@ -30,7 +30,7 @@ class ChargeServiceTest extends FlatSpec with Matchers with Assertions with Mock
   private val _motorbike = new Vehicle("2", VehicleType.Motorbike)
 
   "charge" should "provide correct receipt for: 'Car: 24/04/2008 11:32 - 24/04/2008 14:42'" in {
-    val receipt = _service.charge(_car, new DateTime(2008, 4, 24, 11, 32) to new DateTime(2008, 4, 24, 14, 42))
+    val receipt = _service.charge(_car.vehicleType, new DateTime(2008, 4, 24, 11, 32) to new DateTime(2008, 4, 24, 14, 42))
     assert(receipt.lines.length == 2)
     assert(receipt.lines(0).period.toStandardDuration().getMillis() == 28.minutes.millis)
     assert(receipt.lines(0).total == 0.9)
@@ -40,7 +40,7 @@ class ChargeServiceTest extends FlatSpec with Matchers with Assertions with Mock
   }
 
   "charge" should "provide correct receipt for: 'Motorbike: 24/04/2008 17:00 - 24/04/2008 22:11'" in {
-    val receipt = _service.charge(_motorbike, new DateTime(2008, 4, 24, 17, 0) to new DateTime(2008, 4, 24, 22, 11))
+    val receipt = _service.charge(_motorbike.vehicleType, new DateTime(2008, 4, 24, 17, 0) to new DateTime(2008, 4, 24, 22, 11))
     assert(receipt.lines.length == 2)
     assert(receipt.lines(0).period.toStandardDuration().getMillis() == 0)
     assert(receipt.lines(0).total == 0)
@@ -50,7 +50,7 @@ class ChargeServiceTest extends FlatSpec with Matchers with Assertions with Mock
   }
 
   "charge" should "provide correct receipt for: 'Van: 25/04/2008 10:23 - 28/04/2008 09:02'" in {
-    val receipt = _service.charge(_car, new DateTime(2008, 4, 25, 10, 23) to new DateTime(2008, 4, 28, 9, 2))
+    val receipt = _service.charge(_car.vehicleType, new DateTime(2008, 4, 25, 10, 23) to new DateTime(2008, 4, 28, 9, 2))
     assert(receipt.lines.length == 2)
     assert(receipt.lines(0).period.toStandardDuration().getMillis() == (3.hours + 39.minutes).millis)
     assert(receipt.lines(0).total == 7.3)

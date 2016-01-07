@@ -1,10 +1,8 @@
 package congestioncharge.infrastructure
 
 import congestioncharge.domain.charging._
-import congestioncharge.domain.core.VehicleType
+import congestioncharge.domain.shared._
 import VehicleType._
-import congestioncharge.domain.core.VehicleType
-import congestioncharge.domain.timing.{LocalTimeInterval, WeekDays}
 import org.joda.time.LocalTime
 
 class PolicyHardcodedMemoryRepository extends PolicyRepository {

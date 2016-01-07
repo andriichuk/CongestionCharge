@@ -1,6 +1,6 @@
 package congestioncharge.domain.charging
 
-import congestioncharge.domain.core.Vehicle
+import congestioncharge.domain.shared.VehicleType.VehicleType
 import congestioncharge.domain.timing.TimingService
 import org.joda.time._
 
@@ -9,8 +9,8 @@ class ChargeService(timingService: TimingService, policyRepository: PolicyReposi
   private val _timingService = timingService
   private val _policyRepository = policyRepository
 
-  def charge(vehicle: Vehicle, trackedTime: Interval): Receipt = {
-    val policy = _policyRepository.getPolicy(vehicle.vehicleType)
+  def charge(vehicleType: VehicleType, trackedTime: Interval): Receipt = {
+    val policy = _policyRepository.getPolicy(vehicleType)
     val receiptLines = policy.rules map { buildReceiptLine(_, trackedTime) }
     Receipt(receiptLines, receiptLines.foldLeft(0: BigDecimal)((total, line) => total + line.total))
   }

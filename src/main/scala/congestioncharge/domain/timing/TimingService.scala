@@ -2,6 +2,7 @@ package congestioncharge.domain.timing
 
 import com.github.nscala_time.time.Imports._
 import IntervalImplicits._
+import congestioncharge.domain.shared.LocalTimeInterval
 
 class TimingService {
 

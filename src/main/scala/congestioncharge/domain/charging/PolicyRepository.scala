@@ -1,6 +1,6 @@
 package congestioncharge.domain.charging
 
-import congestioncharge.domain.core.VehicleType
+import congestioncharge.domain.shared.VehicleType
 import VehicleType.VehicleType
 
 trait PolicyRepository {

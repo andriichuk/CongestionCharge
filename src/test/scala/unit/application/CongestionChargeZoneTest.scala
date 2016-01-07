@@ -2,7 +2,7 @@ package unit.application
 
 import congestioncharge.application._
 import congestioncharge.domain.charging._
-import congestioncharge.domain.core.{VehicleType, Vehicle}
+import congestioncharge.domain.shared.VehicleType
 import congestioncharge.domain.tracking._
 import org.joda.time.DateTime
 import org.mockito.Matchers.{eq => eqTo}
@@ -29,7 +29,7 @@ class CongestionChargeZoneTest extends FlatSpec with Matchers with Assertions wi
 
   "leave" should "delete vehicle entry and return receipt" in {
     when(_trackingService.leave(eqTo(_vehicle))).thenReturn(new Interval(1, 1))
-    when(_chargeService.charge(eqTo(_vehicle), any[Interval])).thenReturn(_receipt)
+    when(_chargeService.charge(eqTo(_vehicle.vehicleType), any[Interval])).thenReturn(_receipt)
 
     val receipt = _zone.leave(_vehicle)
 

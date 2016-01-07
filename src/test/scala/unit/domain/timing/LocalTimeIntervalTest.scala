@@ -1,6 +1,6 @@
 package unit.domain.timing
 
-import congestioncharge.domain.timing.LocalTimeInterval
+import congestioncharge.domain.shared.LocalTimeInterval
 import org.joda.time._
 import org.scalatest._
 

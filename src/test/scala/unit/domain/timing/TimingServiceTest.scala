@@ -2,8 +2,8 @@ package unit.domain.timing
 
 import com.github.nscala_time.time.Imports._
 import congestioncharge.domain.charging.{ChargePolicy, ChargePolicyRule}
-import congestioncharge.domain.core.VehicleType
-import congestioncharge.domain.timing.{LocalTimeInterval, TimingService, WeekDays}
+import congestioncharge.domain.shared.{WeekDays, LocalTimeInterval, VehicleType}
+import congestioncharge.domain.timing.TimingService
 import org.scalatest._
 
 class TimingServiceTest extends FlatSpec with Matchers with Assertions {
